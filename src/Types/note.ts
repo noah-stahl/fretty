@@ -1,14 +1,8 @@
-export enum Note {
-  "A",
-  "A#",
-  "B",
-  "C",
-  "C#",
-  "D",
-  "D#",
-  "E",
-  "F",
-  "F#",
-  "G",
-  "G#"
-}
+import { Howl } from "howler";
+import { PitchClass } from "./PitchClass";
+
+export type Note = {
+  pitchClass: PitchClass;
+  name: string;
+  sound: Howl;
+};

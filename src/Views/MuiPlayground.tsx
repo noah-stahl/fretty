@@ -1,23 +1,24 @@
 import { Button, Grid } from "@mui/material";
 import { FretButton } from "../Components/FretButton";
 import {
-  Astring,
-  Bstring,
-  Dstring,
-  Estring,
-  Gstring,
+  AString,
+  BString,
+  DString,
+  EString,
+  GString,
+  HighEString
 } from "../Components/Strings";
-import { Note } from "../Types/note";
+import { PitchClass } from "../Types/PitchClass";
 
 export function MuiPlayground() {
   return (
     <Grid container spacing={2}>
-      <Estring />
-      <Bstring />
-      <Gstring />
-      <Dstring />
-      <Astring />
-      <Estring />
+      <HighEString />
+      <BString />
+      <GString />
+      <DString />
+      <AString />
+      <EString />
     </Grid>
   );
 }

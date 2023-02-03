@@ -1,10 +1,16 @@
 import { Button } from "@mui/material";
-import { Note } from "../Types/note";
+import { Note } from "../Types/Note";
 
 interface FretButtonProps {
-  note: Note;
+  note?: Note;
 }
 
 export function FretButton({ note }: FretButtonProps) {
-  return <Button>{note.toString()}</Button>;
+  if (!note) {
+    return <Button>---</Button>
+  }
+  return <Button onClick={() => {
+    note.sound.play()
+    note.sound.fade(1, 0, 1500)
+  }}>{note.name}</Button>;
 }
