@@ -1,5 +1,4 @@
-import { Button, Grid } from "@mui/material";
-import { FretButton } from "../Components/FretButton";
+import { Grid } from '@mui/material'
 import {
   AString,
   BString,
@@ -7,10 +6,9 @@ import {
   EString,
   GString,
   HighEString
-} from "../Components/Strings";
-import { PitchClass } from "../Types/PitchClass";
+} from '../Components/Strings'
 
-export function MuiPlayground() {
+export function MuiPlayground () {
   return (
     <Grid container spacing={2}>
       <HighEString />
@@ -20,5 +18,5 @@ export function MuiPlayground() {
       <AString />
       <EString />
     </Grid>
-  );
+  )
 }
