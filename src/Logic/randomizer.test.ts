@@ -1,38 +1,33 @@
-import { randomNote } from './randomizer'
-import { PitchClass } from '../Types/PitchClass'
+import { randomNote, randomPitchClass } from './randomizer'
+import { ALL_NATURAL_PITCH_CLASSES, ALL_PITCH_CLASSES } from './pitchClasses'
+import { ALL_NATURAL_NOTES, ALL_NOTES } from './notes'
+
+describe('randomPitchClass', () => {
+  it('returns random natural pitch class by default', () => {
+    [...Array(1000)].forEach(() => {
+      const note = randomPitchClass()
+      expect(ALL_NATURAL_PITCH_CLASSES).toContain(note)
+    })
+  })
+  it('returns with accidentals if option is passed', () => {
+    [...Array(1000)].forEach(() => {
+      const note = randomPitchClass({ onlyNatural: false })
+      expect(ALL_PITCH_CLASSES).toContain(note)
+    })
+  })
+})
 
 describe('randomNote', () => {
-  it('returns random natural by default', () => {
+  it('returns random natural note by default', () => {
     [...Array(1000)].forEach(() => {
       const note = randomNote()
-      expect([
-        PitchClass.A,
-        PitchClass.B,
-        PitchClass.C,
-        PitchClass.D,
-        PitchClass.E,
-        PitchClass.F,
-        PitchClass.G
-      ]).toContain(note)
+      expect(ALL_NATURAL_NOTES).toContain(note)
     })
   })
   it('returns with accidentals if option is passed', () => {
     [...Array(1000)].forEach(() => {
       const note = randomNote({ onlyNatural: false })
-      expect([
-        PitchClass.A,
-        PitchClass.ASharp,
-        PitchClass.B,
-        PitchClass.C,
-        PitchClass.CSharp,
-        PitchClass.D,
-        PitchClass.DSharp,
-        PitchClass.E,
-        PitchClass.F,
-        PitchClass.FSharp,
-        PitchClass.G,
-        PitchClass.GSharp
-      ]).toContain(note)
+      expect(ALL_NOTES).toContain(note)
     })
   })
 })

@@ -6,7 +6,7 @@ import {
   EString,
   GString,
   HighEString
-} from '../Components/Strings'
+} from '../Components/GuitarStrings'
 
 export function MuiPlayground () {
   return (
