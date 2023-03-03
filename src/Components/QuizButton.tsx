@@ -12,6 +12,6 @@ export function QuizButton () {
     }
   }
   return (
-    <Button onClick={rerollTargetNote}>{displayValue}</Button>
+    <Button variant="contained" sx={{ fontSize: '150pt' }} onClick={rerollTargetNote}>{displayValue}</Button>
   )
 }

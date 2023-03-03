@@ -15,14 +15,20 @@ export function Fretboard () {
   return (
     <>
     <Button onClick={() => setLeftHanded(!leftHanded)}>{leftHanded ? 'lefty' : 'righty' }</Button>
-    <QuizButton />
     <Grid container>
-      <HighEString leftHanded={leftHanded}/>
-      <BString leftHanded={leftHanded}/>
-      <GString leftHanded={leftHanded}/>
-      <DString leftHanded={leftHanded}/>
-      <AString leftHanded={leftHanded}/>
-      <EString leftHanded={leftHanded}/>
+      <Grid item>
+        <Grid container>
+          <HighEString leftHanded={leftHanded}/>
+          <BString leftHanded={leftHanded}/>
+          <GString leftHanded={leftHanded}/>
+          <DString leftHanded={leftHanded}/>
+          <AString leftHanded={leftHanded}/>
+          <EString leftHanded={leftHanded}/>
+        </Grid>
+      </Grid>
+      <Grid item>
+        <QuizButton />
+      </Grid>
     </Grid>
     </>
   )
