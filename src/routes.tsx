@@ -1,19 +1,18 @@
-import { createBrowserRouter, RouterProvider, Link } from "react-router-dom";
-import { Button, Link as MUILink } from "@mui/material";
-import { StartPage } from "./Views/StartPage";
-import { MuiPlayground } from "./Views/MuiPlayground";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { StartPage } from './Views/StartPage'
+import { Fretboard } from './Views/Fretboard'
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <StartPage />,
+    path: '/',
+    element: <StartPage />
   },
   {
-    path: "mui",
-    element: <MuiPlayground />,
-  },
-]);
+    path: 'mui',
+    element: <Fretboard />
+  }
+])
 
-export function Routes() {
-  return <RouterProvider router={router} />;
+export function Routes () {
+  return <RouterProvider router={router} />
 }

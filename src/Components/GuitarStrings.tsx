@@ -3,8 +3,16 @@ import { ALL_NOTES } from '../Logic/notes'
 import { Note } from '../Types/Note'
 import { FretButton } from './FretButton'
 
+function getFretNumber ({ noteSlice, index, leftHanded }: {noteSlice: Note[], index: number, leftHanded: boolean}) {
+  if (leftHanded) {
+    return (noteSlice.length - (index + 1))
+  }
+
+  return index
+}
+
 interface GuitarStringProps {
-  leftHanded?: boolean;
+  leftHanded: boolean;
 }
 
 export function HighEString ({ leftHanded }: GuitarStringProps) {
@@ -13,13 +21,11 @@ export function HighEString ({ leftHanded }: GuitarStringProps) {
     noteSlice.reverse()
   }
   return (
-    <Grid item xs={12}>
       <Grid item xs={12}>
         {noteSlice.map((note: Note, index) => (
-          <FretButton key={note.name} note={note} label={String(index)} />
+          <FretButton key={note.name} note={note} label={String(getFretNumber({ noteSlice, index, leftHanded }))} />
         ))}
       </Grid>
-    </Grid>
   )
 }
 
@@ -29,13 +35,11 @@ export function BString ({ leftHanded }: GuitarStringProps) {
     noteSlice.reverse()
   }
   return (
-    <Grid item xs={12}>
       <Grid item xs={12}>
         {noteSlice.map((note: Note, index) => (
-          <FretButton key={note.name} note={note} label={String(index)} />
+          <FretButton key={note.name} note={note} label={String(getFretNumber({ noteSlice, index, leftHanded }))} />
         ))}
       </Grid>
-    </Grid>
   )
 }
 
@@ -45,13 +49,11 @@ export function GString ({ leftHanded }: GuitarStringProps) {
     noteSlice.reverse()
   }
   return (
-    <Grid item xs={12}>
       <Grid item xs={12}>
         {noteSlice.map((note: Note, index) => (
-          <FretButton key={note.name} note={note} label={String(index)} />
+          <FretButton key={note.name} note={note} label={String(getFretNumber({ noteSlice, index, leftHanded }))} />
         ))}
       </Grid>
-    </Grid>
   )
 }
 
@@ -61,13 +63,12 @@ export function DString ({ leftHanded }: GuitarStringProps) {
     noteSlice.reverse()
   }
   return (
-    <Grid item xs={12}>
       <Grid item xs={12}>
         {noteSlice.map((note: Note, index) => (
-          <FretButton key={note.name} note={note} label={String(index)}/>
+          <FretButton key={note.name} note={note} label={String(getFretNumber({ noteSlice, index, leftHanded }))}/>
         ))}
       </Grid>
-    </Grid>
+
   )
 }
 
@@ -79,7 +80,7 @@ export function AString ({ leftHanded }: GuitarStringProps) {
   return (
     <Grid item xs={12}>
       {noteSlice.map((note: Note, index) => (
-        <FretButton key={note.name} note={note} label={String(index)} />
+        <FretButton key={note.name} note={note} label={String(getFretNumber({ noteSlice, index, leftHanded }))} />
       ))}
     </Grid>
   )
@@ -93,7 +94,7 @@ export function EString ({ leftHanded }: GuitarStringProps) {
   return (
     <Grid item xs={12}>
       {noteSlice.map((note: Note, index) => (
-        <FretButton key={note.name} note={note} label={String(index)}/>
+        <FretButton key={note.name} note={note} label={String(getFretNumber({ noteSlice, index, leftHanded }))}/>
       ))}
     </Grid>
   )
