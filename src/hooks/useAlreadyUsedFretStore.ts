@@ -7,11 +7,13 @@ interface AlreadyUsedFretState {
   addFret: (newFret: Fret) => void;
   clearFrets: () => void;
   setLimit: (limit: number) => void;
+  incrementLimit: () => void;
+  decrementLimit: () => void;
 }
 
 export const useAlreadyUsedFretStore = create<AlreadyUsedFretState>((set) => ({
   alreadyUsedFrets: [],
-  limit: 10,
+  limit: 5,
   addFret: (newFret) => set((state) => ({
     alreadyUsedFrets: addFretToStore({
       newFret,
@@ -20,7 +22,14 @@ export const useAlreadyUsedFretStore = create<AlreadyUsedFretState>((set) => ({
     })
   })),
   clearFrets: () => set({ alreadyUsedFrets: [] }),
-  setLimit: (limit) => set({ limit })
+  setLimit: (limit) => set({ limit }),
+  incrementLimit: () => set((state) => ({ limit: state.limit + 1 })),
+  decrementLimit: () => set((state) => {
+    if (state.limit <= 0) {
+      return { limit: 0 }
+    }
+    return { limit: state.limit - 1 }
+  })
 }))
 
 interface AddFretToStoreProps {
