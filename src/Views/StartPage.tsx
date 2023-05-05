@@ -1,6 +1,4 @@
 import { Button, Typography } from '@mui/material'
-import { PointIncrease, PointReset } from '../Components/PointButtons'
-import { PointCounter } from '../Components/PointCounter'
 
 export function StartPage () {
   return (
@@ -10,9 +8,6 @@ export function StartPage () {
       <Button variant="contained" href="mui">
         Take Quiz
       </Button>
-      <PointIncrease />
-      <PointReset />
-      <PointCounter />
     </>
   )
 }

@@ -1,10 +1,10 @@
 import { Button, ButtonProps, styled } from '@mui/material'
 import { useQuiz } from '../hooks/useQuiz'
-import { Note } from '../Types/Note'
+import { Fret } from '../Types/Fret'
+import { useAlreadyUsedFretStore } from '../hooks/useAlreadyUsedFretStore'
 
 interface FretButtonProps {
-  label: string;
-  note?: Note;
+  fret: Fret;
 }
 
 const ButtonWithBorder = styled(Button)<ButtonProps>(({ theme }) => ({
@@ -12,20 +12,25 @@ const ButtonWithBorder = styled(Button)<ButtonProps>(({ theme }) => ({
   borderRadius: '0px'
 }))
 
-export function FretButton ({ label, note }: FretButtonProps) {
+export function FretButton ({ fret }: FretButtonProps) {
   const { makeGuess } = useQuiz()
-
-  if (!note) {
-    return <ButtonWithBorder>---</ButtonWithBorder>
-  }
+  const { alreadyUsedFrets } = useAlreadyUsedFretStore()
+  const { note, fretNumber } = fret
 
   const playNote = () => {
     note.sound.play()
     note.sound.fade(1, 0, 1500)
   }
 
-  return <ButtonWithBorder onClick={() => {
-    makeGuess(note)
-    playNote()
-  }}>{label}</ButtonWithBorder>
+  return (
+    <ButtonWithBorder
+      disabled={alreadyUsedFrets.includes(fret)}
+      onClick={() => {
+        makeGuess(fret)
+        playNote()
+      }}
+    >
+      {fretNumber}
+    </ButtonWithBorder>
+  )
 }
