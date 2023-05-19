@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 export enum PitchClass {
   A = 'A',
-  ASharp = 'ASharp',
+  ASharp = 'A#',
   B = 'B',
   C = 'C',
-  CSharp = 'CSharp',
+  CSharp = 'C#',
   D = 'D',
-  DSharp = 'DSharp',
+  DSharp = 'D#',
   E = 'E',
   F = 'F',
-  FSharp = 'FSharp',
+  FSharp = 'F#',
   G = 'G',
-  GSharp = 'GSharp',
+  GSharp = 'G#',
 }
