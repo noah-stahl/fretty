@@ -16,6 +16,7 @@ const ButtonWithBorder = styled(Button)<ButtonProps>(({ theme }) => ({
 export function FretButton ({ fret }: FretButtonProps) {
   const { makeGuess } = useQuiz()
   const { alreadyUsedFrets } = useAlreadyUsedFretStore()
+  const { showPitchClassesOnFrets } = useSettingsStore()
   const { note, fretNumber } = fret
 
   const playNote = () => {
@@ -31,6 +32,13 @@ export function FretButton ({ fret }: FretButtonProps) {
         playNote()
       }}
     >
+      {showPitchClassesOnFrets && (
+        <div style={{
+          position: 'absolute',
+          opacity: '50%',
+          fontSize: '22pt'
+        }}>{note.pitchClass}</div>
+      )}
       {fretNumber}
     </ButtonWithBorder>
   )
