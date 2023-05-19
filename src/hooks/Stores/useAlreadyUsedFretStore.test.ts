@@ -1,7 +1,7 @@
-import { A_FRETS } from '../Logic/Frets/AFrets'
-import { B_FRETS } from '../Logic/Frets/BFrets'
-import { HIGH_E_FRETS } from '../Logic/Frets/HighEFrets'
-import { LOW_E_FRETS } from '../Logic/Frets/LowEFrets'
+import { A_FRETS } from '../../Logic/Frets/AFrets'
+import { B_FRETS } from '../../Logic/Frets/BFrets'
+import { HIGH_E_FRETS } from '../../Logic/Frets/HighEFrets'
+import { LOW_E_FRETS } from '../../Logic/Frets/LowEFrets'
 import { addFretToStore } from './useAlreadyUsedFretStore'
 
 describe('addFretToStore', () => {

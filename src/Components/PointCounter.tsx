@@ -1,5 +1,5 @@
 import { Chip } from '@mui/material'
-import { usePointStore } from '../hooks/usePointStore'
+import { usePointStore } from '../hooks/Stores/usePointStore'
 
 export function PointCounter () {
   const { points } = usePointStore()

@@ -1,7 +1,8 @@
 import { Button, ButtonProps, styled } from '@mui/material'
 import { useQuiz } from '../hooks/useQuiz'
 import { Fret } from '../Types/Fret'
-import { useAlreadyUsedFretStore } from '../hooks/useAlreadyUsedFretStore'
+import { useAlreadyUsedFretStore } from '../hooks/Stores/useAlreadyUsedFretStore'
+import { useSettingsStore } from '../hooks/Stores/useSettingsStore'
 
 interface FretButtonProps {
   fret: Fret;

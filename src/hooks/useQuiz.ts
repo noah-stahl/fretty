@@ -1,7 +1,7 @@
 import { Howl } from 'howler'
-import { usePointStore } from './usePointStore'
-import { useQuizStore } from './useQuizStore'
-import { useAlreadyUsedFretStore } from './useAlreadyUsedFretStore'
+import { usePointStore } from './Stores/usePointStore'
+import { useQuizStore } from './Stores/useQuizStore'
+import { useAlreadyUsedFretStore } from './Stores/useAlreadyUsedFretStore'
 import { Fret } from '../Types/Fret'
 
 const successSound = new Howl({ src: '../sounds/_SUCCESS.mp3' })

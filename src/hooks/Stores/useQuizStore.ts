@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import { randomNote } from '../Logic/randomizer'
-import { Note } from '../Types/Note'
+import { randomNote } from '../../Logic/randomizer'
+import { Note } from '../../Types/Note'
 
 interface QuizSettings {
   onlyTargetPitchClasses: boolean;

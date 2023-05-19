@@ -1,7 +1,7 @@
 import { create } from 'zustand'
-import { Fret } from '../Types/Fret'
+import { Fret } from '../../Types/Fret'
 
-interface AlreadyUsedFretState {
+interface AlreadyUsedFretStore {
   alreadyUsedFrets: Fret[];
   limit: number;
   addFret: (newFret: Fret) => void;
@@ -11,7 +11,7 @@ interface AlreadyUsedFretState {
   decrementLimit: () => void;
 }
 
-export const useAlreadyUsedFretStore = create<AlreadyUsedFretState>((set) => ({
+export const useAlreadyUsedFretStore = create<AlreadyUsedFretStore>((set) => ({
   alreadyUsedFrets: [],
   limit: 5,
   addFret: (newFret) => set((state) => ({

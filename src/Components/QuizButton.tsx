@@ -1,5 +1,5 @@
 import { Button } from '@mui/material'
-import { useQuizStore } from '../hooks/useQuizStore'
+import { useQuizStore } from '../hooks/Stores/useQuizStore'
 
 export function QuizButton () {
   const { targetNote, rerollTargetNote, settings } = useQuizStore()
