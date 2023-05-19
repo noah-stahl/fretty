@@ -1,4 +1,4 @@
-import { Button, ButtonProps, styled } from '@mui/material'
+import { Button, ButtonProps, styled, useTheme } from '@mui/material'
 import { useQuiz } from '../hooks/useQuiz'
 import { Fret } from '../Types/Fret'
 import { useAlreadyUsedFretStore } from '../hooks/Stores/useAlreadyUsedFretStore'
@@ -14,6 +14,7 @@ const ButtonWithBorder = styled(Button)<ButtonProps>(({ theme }) => ({
 }))
 
 export function FretButton ({ fret }: FretButtonProps) {
+  const theme = useTheme()
   const { makeGuess } = useQuiz()
   const { alreadyUsedFrets } = useAlreadyUsedFretStore()
   const { showPitchClassesOnFrets } = useSettingsStore()
@@ -35,8 +36,9 @@ export function FretButton ({ fret }: FretButtonProps) {
       {showPitchClassesOnFrets && (
         <div style={{
           position: 'absolute',
-          opacity: '50%',
-          fontSize: '22pt'
+          zIndex: -9,
+          fontSize: '22pt',
+          color: theme.palette.secondary.main
         }}>{note.pitchClass}</div>
       )}
       {fretNumber}

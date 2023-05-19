@@ -18,23 +18,23 @@ const LinkBehavior = React.forwardRef<
 const theme = createTheme({
   palette: {
     text: {
-      primary: '#FFFFFF',
-      secondary: '#CCCCCC',
+      primary: '#1d3557',
+      secondary: '#457b9d',
       disabled: '#AAAAAA'
     },
     background: {
-      default: '#231942'
+      default: '#f1faee'
     },
     primary: {
-      main: '#5E548E',
-      dark: '#4C4474',
-      light: '#6F65A4',
+      main: '#e63946',
+      dark: '#BE2F3A',
+      light: '#E96A70',
       contrastText: '#FFFFFF'
     },
     secondary: {
-      main: '#9F86C0',
-      dark: '#8A6BB3',
-      light: '#B5A1CE',
+      main: '#a8dadc',
+      dark: '#77ABBD',
+      light: '#CDEAE5',
       contrastText: '#FFFFFF'
     },
     error: {
